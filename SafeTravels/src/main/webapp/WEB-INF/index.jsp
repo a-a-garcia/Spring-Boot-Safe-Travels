@@ -33,7 +33,7 @@
   <tbody>
   <c:forEach var="travel" items="${allTravels}">
     <tr>
-      <th scope="row"><c:out value="${travel.expenseName}"></c:out></th>
+      <th scope="row"><a href="/expenses/${travel.id}"><c:out value="${travel.expenseName}"></c:out></a></th>
       <th scope="row"><c:out value="${travel.vendor}"></c:out></th>
       <th scope="row">$<c:out value="${travel.amount}"></c:out></th>
       <th scope="row" class="d-flex justify-content-center align-items-center">

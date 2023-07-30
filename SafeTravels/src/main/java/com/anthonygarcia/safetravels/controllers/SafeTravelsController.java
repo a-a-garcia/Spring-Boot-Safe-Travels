@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.anthonygarcia.burgertracker.models.Burger;
 import com.anthonygarcia.safetravels.models.Travels;
 import com.anthonygarcia.safetravels.services.TravelsService;
 
@@ -32,6 +33,15 @@ public class SafeTravelsController {
     	return "index.jsp";
     }
 //
+//  GET ONE OBJECT
+    @GetMapping("/expenses/{id}")
+    public String show(Model model, @PathVariable Long id) {
+    	Travels travels = travelsService.findTravel(id);
+    	model.addAttribute("travel", travels);
+    	return "showOne.jsp";
+    }
+    
+
 //    
 ////    CREATE NEW OBJECT
     @PostMapping("/expenses/create")
